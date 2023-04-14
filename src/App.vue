@@ -6,7 +6,11 @@
           :isAuth="isAuth"
           :banks="banks"
           :cards="cards"
-          :payments="payments">
+          :payments="payments"
+          :accountReqs="accountReqs"
+          :cardReqs="cardReqs"
+          :accounts="accounts"
+      >
       </router-view>
     </v-main>
   </v-app>
@@ -200,6 +204,38 @@ export default {
         foundDate: '27.01.1995'
       }
     ],
+    accounts: [
+      {
+        id: 1, openDate: 'April 11, 2023 06:14:00', balance: '223.54 BYN',
+        bankLogo: 'https://belarusbank.by/i/bbZnak.png',
+        number: '3413 4124 8148 1894 9812',
+        title: 'Student Card', currency: 'BYN'
+      },
+      {
+        id: 2, openDate: 'June 11, 2022 12:14:00', balance: '2.54 BYN',
+        bankLogo: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/VTB_logo_2018.png',
+        number: '3413 4124 8148 1894 9812',
+        title: 'Gold Card', currency: 'BYN'
+      },
+      {
+        id: 3, openDate: 'March 03, 2023 13:54:00', balance: '360.54 BYN',
+        bankLogo: 'https://alfabank.servicecdn.ru/media/footer-alfa-logo_1025x1025_common_19-01-2021.svg',
+        number: '3413 4124 8148 1894 9812',
+        title: 'Student Card', currency: 'BYN'
+      },
+      {
+        id: 4, openDate: 'September 09, 2023 15:49:00', balance: '23.54 BYN',
+        bankLogo: 'https://belarusbank.by/i/bbZnak.png',
+        number: '3413 4124 8148 1894 9812',
+        title: 'Salary Card', currency: 'BYN'
+      },
+      {
+        id: 5, openDate: 'April 11, 2023 06:14:00', balance: '103.54 BYN',
+        bankLogo: 'https://alfabank.servicecdn.ru/media/footer-alfa-logo_1025x1025_common_19-01-2021.svg',
+        number:  '3413 4124 8148 1894 9812',
+        title: 'Salary Card', currency: 'BYN'
+      }
+    ],
     cards: [
       {
         id: 1,
@@ -237,8 +273,11 @@ export default {
     ],
     payments: [
       {
-        id: 1, title: 'Sergey', date: 'April 12, 2023 03:24:00', value: '14.2 BYN',
-        cardNumber: '4255 1901 0817 3177', bankLogo: 'https://belarusbank.by/i/bbZnak.png'
+        id: 1, title: 'Sergey', date: 'April 12, 2023 03:24:00',
+        value: '14.2 BYN',
+        cardNumber: '4255 1901 0817 3177',
+        receiver: '2131 1231 2131 9929',
+        bankLogo: 'https://belarusbank.by/i/bbZnak.png'
       },
       {
         id: 2,
@@ -246,6 +285,7 @@ export default {
         date: 'April 11, 2023 06:14:00',
         value: '34.2 BYN',
         cardNumber: '4255 1901 0817 3177',
+        receiver: '2131 1231 2131 9929',
         bankLogo: 'https://alfabank.servicecdn.ru/media/footer-alfa-logo_1025x1025_common_19-01-2021.svg'
       },
       {
@@ -254,6 +294,7 @@ export default {
         date: 'April 11, 2023 16:45:00',
         value: '42.2 BYN',
         cardNumber: '7225 4903 4867 1197',
+        receiver: '2131 1231 2131 9929',
         bankLogo: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/VTB_logo_2018.png'
       },
       {
@@ -262,17 +303,83 @@ export default {
         date: 'April 10, 2023 17:49:00',
         value: '107.2 BYN',
         cardNumber: '4255 1901 0817 3177',
+        receiver: '2131 1231 2131 9929',
         bankLogo: 'https://alfabank.servicecdn.ru/media/footer-alfa-logo_1025x1025_common_19-01-2021.svg'
       },
       {
-        id: 5, title: 'Balance', date: 'April 9, 2023 21:54:00', value: '143.2 BYN',
-        cardNumber: '5055 1904 9817 8107', bankLogo: 'https://belarusbank.by/i/bbZnak.png'
+        id: 5, title: 'Balance', date: 'April 9, 2023 21:54:00',
+        value: '143.2 BYN',
+        cardNumber: '5055 1904 9817 8107',
+        receiver: '2131 1231 2131 9929',
+        bankLogo: 'https://belarusbank.by/i/bbZnak.png'
       },
       {
-        id: 5, title: 'Balance', date: 'April 9, 2023 21:54:00', value: '143.2 BYN',
-        cardNumber: '5055 1904 9817 8107', bankLogo: 'https://belarusbank.by/i/bbZnak.png'
+        id: 5, title: 'Balance', date: 'April 9, 2023 21:54:00',
+        value: '143.2 BYN',
+        cardNumber: '5055 1904 9817 8107',
+        receiver: '2131 1231 2131 9929',
+        bankLogo: 'https://belarusbank.by/i/bbZnak.png'
       },
-    ]
+    ],
+    accountReqs: [
+      {
+        id: 1, userEmail: 'dimasidorenko53@gmai.com',
+        purpose: 'Commercial',
+        status: 'Accepted', bank: 'Belarusbank',
+        date: new Date("December 17, 1995 03:24:00")
+      },
+      {
+        id: 2, userEmail: 'dimasidorenko53@gmai.com',
+        purpose: 'Individual',
+        status: 'Accepted', bank: 'VTB',
+        date: new Date("December 17, 1995 03:24:00")
+      },
+      {
+        id: 3, userEmail: 'dimasidorenko53@gmai.com',
+        purpose: 'Commercial',
+        status: 'Accepted', bank: 'VTB',
+        date: new Date("December 17, 1995 03:24:00")
+      },
+      {
+        id: 4, userEmail: 'dimasidorenko53@gmai.com',
+        purpose: 'Individual',
+        status: 'Accepted', bank: 'VTB',
+        date: new Date("December 17, 1995 03:24:00")
+      },
+      {
+        id: 5, userEmail: 'dimasidorenko53@gmai.com',
+        purpose: 'Individual',
+        status: 'Accepted', bank: 'VTB',
+        date: new Date("December 17, 1995 03:24:00")
+      },
+    ],
+    cardReqs: [
+      {
+        id: 1, userEmail: 'dimasidorenko53@gmai.com',
+        status: 'Rejected', bank: 'VTB', paymentSystem: 'VISA',
+        date: new Date("December 17, 1995 03:24:00")
+      },
+      {
+        id: 2, userEmail: 'dimasidorenko53@gmai.com',
+        status: 'Rejected', bank: 'VTB', paymentSystem: 'MasterCard',
+        date: new Date("December 17, 1995 03:24:00")
+      },
+      {
+        id: 3, userEmail: 'dimasidorenko53@gmai.com',
+        status: 'Rejected', bank: 'VTB', paymentSystem: 'VISA',
+        date: new Date("December 17, 1995 03:24:00")
+      },
+      {
+        id: 4, userEmail: 'dimasidorenko53@gmai.com',
+        status: 'Rejected', bank: 'VTB', paymentSystem: 'Maestro',
+        date: new Date("December 17, 1995 03:24:00")
+      },
+      {
+        id: 5, userEmail: 'dimasidorenko53@gmai.com',
+        status: 'Rejected', bank: 'VTB', paymentSystem: 'Mir',
+        date: new Date("December 17, 1995 03:24:00")
+      },
+    ],
   })
 }
 </script>

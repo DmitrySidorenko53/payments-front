@@ -4,7 +4,6 @@
       chips
       label="Purpose"
       :items="items"
-      multiple
   >
   </v-select>
 </template>

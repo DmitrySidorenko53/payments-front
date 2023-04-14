@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="space-between" class="mb-3">
+  <v-row v-if="isAuth" justify="space-between" class="mb-3">
     <v-col>
       <ManagerFilterModal/>
     </v-col>
@@ -15,7 +15,12 @@ import ManagerFilterModal from "@/components/manager/ManagerFilterModal";
 
 export default {
   name: "ToolBar",
-  components: {SearchBar, ManagerFilterModal}
+  components: {SearchBar, ManagerFilterModal},
+  props: {
+    isAuth: {
+      type: Boolean
+    }
+  }
 }
 </script>
 

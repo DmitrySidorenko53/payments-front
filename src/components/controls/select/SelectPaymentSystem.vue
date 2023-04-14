@@ -4,7 +4,6 @@
       chips
       label="Payment System"
       :items="items"
-      multiple
   >
   </v-select>
 </template>

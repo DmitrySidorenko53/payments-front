@@ -1,18 +1,14 @@
 <template>
   <v-card>
-    <v-row class="mx-auto">
-      <v-col cols="12" md="6">
-        <AccountsList/>
+    <v-row class="mx-auto" justify="center">
+      <v-col cols="12" sm="10" md="8" lg="5" xl="4">
+        <AccountsList :accounts="accounts" :banks="banks" :cards="cards"/>
       </v-col>
-      <v-col cols="12" md="6">
-        <v-row>
-          <v-col cols="12">
-            <AccountRequestForm/>
-          </v-col>
-          <v-col cols="12">
-            <AccountRequestsList/>
-          </v-col>
-        </v-row>
+      <v-col cols="12" md="6" lg="7" xl="4">
+        <AccountRequestForm/>
+      </v-col>
+      <v-col cols="12" md="6" lg="12" xl="4">
+        <AccountRequestsList :accountReqs="accountReqs" :banks="banks"/>
       </v-col>
     </v-row>
   </v-card>
@@ -26,7 +22,21 @@ import AccountRequestsList from "@/components/services/accounts/AccountRequestsL
 
 export default {
   name: "Accounts",
-  components: {AccountRequestsList, AccountRequestForm, AccountsList}
+  components: {AccountRequestsList, AccountRequestForm, AccountsList},
+  props: {
+    accountReqs: {
+      type: Array
+    },
+    accounts: {
+      type: Array
+    },
+    cards: {
+      type: Array
+    },
+    banks: {
+      type: Array
+    },
+  }
 }
 </script>
 

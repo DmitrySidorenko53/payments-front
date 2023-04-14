@@ -4,7 +4,6 @@
       chips
       label="Banks"
       :items="items"
-      multiple
   >
   </v-select>
 </template>

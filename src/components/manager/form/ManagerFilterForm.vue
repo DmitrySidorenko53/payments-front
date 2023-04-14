@@ -6,7 +6,7 @@
     <SelectPaymentSystem/>
     <v-row justify="end">
       <v-col cols="6" md="3">
-        <SubmitButton/>
+        <SubmitWithoutConfirmation/>
       </v-col>
       <v-col cols="6" md="3">
         <ResetButton/>
@@ -22,10 +22,13 @@ import SelectRequestStatus from "@/components/controls/select/SelectRequestStatu
 import SelectBank from "@/components/controls/select/SelectBank";
 import SelectPurpose from "@/components/controls/select/SelectPurpose";
 import SelectPaymentSystem from "@/components/controls/select/SelectPaymentSystem";
+import SubmitWithoutConfirmation from "@/components/controls/button/SubmitWithoutConfirmation";
 
 export default {
   name: "ManagerFilterForm",
-  components: {SelectPaymentSystem, SelectPurpose, SelectBank, SelectRequestStatus, ResetButton, SubmitButton}
+  components: {
+    SubmitWithoutConfirmation,
+    SelectPaymentSystem, SelectPurpose, SelectBank, SelectRequestStatus, ResetButton, SubmitButton}
 }
 </script>
 

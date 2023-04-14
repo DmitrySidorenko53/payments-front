@@ -1,7 +1,7 @@
 <template>
-  <v-window
-      v-model="window"
-      show-arrows="hover"
+  <v-window v-if="isAuth"
+            v-model="window"
+            show-arrows="hover"
   >
     <v-card>
       <v-window-item>
@@ -33,65 +33,6 @@ export default {
   components: {CardsRequests, Cards, AccountRequests},
   data: () => ({
     window: 0,
-    accountReqs: [
-      {
-        id: 1, userEmail: 'dimasidorenko53@gmai.com',
-        purpose: 'Commercial',
-        status: 'Accepted', bank: 'Belarusbank',
-        date: new Date("December 17, 1995 03:24:00")
-      },
-      {
-        id: 2, userEmail: 'dimasidorenko53@gmai.com',
-        purpose: 'Individual',
-        status: 'Accepted', bank: 'VTB',
-        date: new Date("December 17, 1995 03:24:00")
-      },
-      {
-        id: 3, userEmail: 'dimasidorenko53@gmai.com',
-        purpose: 'Commercial',
-        status: 'Accepted', bank: 'VTB',
-        date: new Date("December 17, 1995 03:24:00")
-      },
-      {
-        id: 4, userEmail: 'dimasidorenko53@gmai.com',
-        purpose: 'Individual',
-        status: 'Accepted', bank: 'VTB',
-        date: new Date("December 17, 1995 03:24:00")
-      },
-      {
-        id: 5, userEmail: 'dimasidorenko53@gmai.com',
-        purpose: 'Individual',
-        status: 'Accepted', bank: 'VTB',
-        date: new Date("December 17, 1995 03:24:00")
-      },
-    ],
-    cardReqs: [
-      {
-        id: 1, userEmail: 'dimasidorenko53@gmai.com',
-        status: 'Rejected', bank: 'VTB', paymentSystem: 'VISA',
-        date: new Date("December 17, 1995 03:24:00")
-      },
-      {
-        id: 2, userEmail: 'dimasidorenko53@gmai.com',
-        status: 'Rejected', bank: 'VTB', paymentSystem: 'MasterCard',
-        date: new Date("December 17, 1995 03:24:00")
-      },
-      {
-        id: 3, userEmail: 'dimasidorenko53@gmai.com',
-        status: 'Rejected', bank: 'VTB', paymentSystem: 'VISA',
-        date: new Date("December 17, 1995 03:24:00")
-      },
-      {
-        id: 4, userEmail: 'dimasidorenko53@gmai.com',
-        status: 'Rejected', bank: 'VTB', paymentSystem: 'Maestro',
-        date: new Date("December 17, 1995 03:24:00")
-      },
-      {
-        id: 5, userEmail: 'dimasidorenko53@gmai.com',
-        status: 'Rejected', bank: 'VTB', paymentSystem: 'Mir',
-        date: new Date("December 17, 1995 03:24:00")
-      },
-    ],
     dateOptions:
         {
           weekday: 'long', hour: 'numeric', minute: 'numeric',
@@ -102,6 +43,15 @@ export default {
     banks: {
       type: Array
     },
+    cardReqs: {
+      type: Array
+    },
+    accountReqs: {
+      type: Array
+    },
+    isAuth: {
+      type: Boolean
+    }
   }
 }
 </script>

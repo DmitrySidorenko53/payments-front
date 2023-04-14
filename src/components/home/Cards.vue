@@ -8,9 +8,9 @@
         <v-col cols="11">
           <v-window v-model="window" show-arrows="hover">
             <v-window-item
-                v-for="item in cards" :key="item.id"
+                v-for="card in cards" :key="card.id"
             >
-              <Card :item="item" :ifAuth="ifAuth"/>
+              <Card :card="card" :ifAuth="ifAuth"/>
             </v-window-item>
           </v-window>
         </v-col>

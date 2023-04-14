@@ -1,7 +1,8 @@
 <template>
   <v-banner
       :avatar="item.bankLogo"
-      class="bg-grey-lighten-4 my-2 mx-2"
+      class="bg-grey-lighten-4 my-2 mx-2 text-white"
+      style=" background-image: radial-gradient(circle, #47693f, #568440, #6a9e3e, #82b936, #9fd426);"
   >
     <v-banner-text>
       <v-list-item

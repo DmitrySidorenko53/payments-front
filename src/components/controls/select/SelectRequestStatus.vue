@@ -4,7 +4,6 @@
       chips
       label="Status"
       :items="items"
-      multiple
   >
   </v-select>
 </template>

@@ -1,6 +1,10 @@
 <template>
-  <ToolBar/>
-  <RequestsLists :banks="banks"/>
+  <ToolBar :isAuth="isAuth"/>
+  <RequestsLists :isAuth="isAuth"
+      :banks="banks"
+      :account-reqs="accountReqs"
+      :card-reqs="cardReqs"
+  />
 </template>
 
 <script>
@@ -16,6 +20,15 @@ export default {
     },
     cards: {
       type: Array
+    },
+    accountReqs: {
+      type: Array
+    },
+    cardReqs: {
+      type: Array
+    },
+    isAuth: {
+      type: Boolean
     }
   }
 }

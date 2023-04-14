@@ -1,5 +1,5 @@
 <template>
-  <v-card elevation="5">
+  <v-card v-if="isAuth" elevation="5" height="800px" class="overflow-y-auto">
     <v-tabs
         v-model="tab"
         class="bg-green-darken-3"
@@ -11,13 +11,18 @@
     </v-tabs>
     <v-window v-model="tab">
       <v-window-item :value="1">
-        <Accounts/>
+        <Accounts :accounts="accounts"
+                  :accountReqs="accountReqs"
+                  :banks="banks"
+                  :cards="cards"/>
       </v-window-item>
       <v-window-item :value="2">
-        <Cards/>
+        <Cards :cards="cards"
+               :cardReqs="cardReqs"
+               :banks="banks"/>
       </v-window-item>
       <v-window-item :value="3">
-        <Payments/>
+        <Payments :payments="payments" :cards="cards"/>
       </v-window-item>
     </v-window>
   </v-card>
@@ -45,6 +50,15 @@ export default {
       type: Array
     },
     payments: {
+      type: Array
+    },
+    cardReqs: {
+      type: Array
+    },
+    accountReqs: {
+      type: Array
+    },
+    accounts: {
       type: Array
     }
   }
